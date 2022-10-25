@@ -36,5 +36,5 @@
 ## Notes
 - Tests should be written for each feature
 - Ensure the code is reasonably secure
-- Do not create a PR against this repository
+- Create a fork and work directly in the main branch
 - **Bullet points marked with \* are optional for mid-level positions**
