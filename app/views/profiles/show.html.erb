@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @profile %>
+
+<div class="btn-group">
+  <%= link_to "Edit this profile", edit_profile_path(@profile), class: "btn btn-secondary" %>
+  <%= link_to "Back to profiles", profiles_path, class: "btn btn-primary" %>
+  <%= button_to "Destroy this profile", @profile, method: :delete, class: "btn btn-danger" %>
+</div>

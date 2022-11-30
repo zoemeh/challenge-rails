@@ -1,0 +1,29 @@
+<%= form_with(model: repository) do |form| %>
+  <% if repository.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(repository.errors.count, "error") %> prohibited this repository from being saved:</h2>
+
+      <ul>
+        <% repository.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="mb-3">
+    <%= form.label :name, class: "form-label"%>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :tags, class: "form-label"%>
+    <%= form.text_field :tags, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :profile_id, class: "form-label"%>
+    <%= form.collection_select(:profile_id, Profile.all, :id, :username, {}, {class: "form-select"}) %>
+  </div>
+  <div>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
